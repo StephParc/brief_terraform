@@ -13,6 +13,11 @@ variable "app_service_plan_name" {
   type        = string
 }
 
+variable "resource_group_dependency" {
+  description = "Dépendance du groupe de ressources"
+  type        = any
+}
+
 variable "webapp_name" {
   description = "Nom de la webapp"
   type        = string

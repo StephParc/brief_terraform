@@ -6,7 +6,7 @@ resource "azurerm_storage_account" "my_storage_account" {
   account_tier             = "Standard"
   account_replication_type = "LRS"
 
-  depends_on = [azurerm_resource_group.rg]
+  depends_on = [var.resource_group_dependency]
 }
 
 # Création d'un blob container

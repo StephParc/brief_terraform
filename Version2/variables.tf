@@ -29,7 +29,7 @@ variable "virtual_network_name" {
 
 variable "vnet_address_space" {
   description = "Espace d'adressage du réseau"
-  type        = string
+  type        = list(string)
 }
 
 variable "subnet_name" {
@@ -39,7 +39,7 @@ variable "subnet_name" {
 
 variable "address_prefixes" {
   description = "Préfixe d'adresses"
-  type        = string
+  type        = list(string)
 }
 
 variable "nic_name" {

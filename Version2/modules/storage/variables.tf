@@ -16,3 +16,8 @@ variable "storage_account_name" {
 variable "blob_name" {
   description = "Le nom du conteneur blob"
 }
+
+variable "resource_group_dependency" {
+  description = "Dépendance du groupe de ressources"
+  type        = any
+}

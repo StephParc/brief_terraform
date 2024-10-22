@@ -11,7 +11,7 @@ output "vnet_address_space" {
 }
 
 output "vnet_rg_name" {
-  value = azurerm_virtual_network.vnet.resource_group_name.name
+  value = azurerm_virtual_network.vnet.resource_group_name
 }
 
 output "subnet_name" {

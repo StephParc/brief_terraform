@@ -10,7 +10,7 @@ resource "azurerm_app_service_plan" "app_service_plan" {
     size = "S1"
   }
 
-  depends_on = [azurerm_resource_group.rg]
+  depends_on = [var.resource_group_dependency]
 }
 
 # Création de la webapp
