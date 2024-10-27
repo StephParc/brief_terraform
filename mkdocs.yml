@@ -1,1 +1,16 @@
-site_name: Brief_Terraform_Azure
+site_name: Brief Terraform Azure
+
+nav:
+  - Accueil: index.md
+  - Projet: Projet.md
+  - A vous de jouer: A_vous_de_jouer.md
+  
+theme:
+  name: mkdocs
+  # name: readthedocs
+  # navigation_depth: 3
+  color_mode: auto
+  user_color_mode_toggle: true
+  nav_style: dark
+markdown_extensions:
+  - pymdownx.superfences
