@@ -1,3 +1,6 @@
+# First version without module
+VersionSansModule/
+
 # Local .terraform directories
 **/.terraform/*
 
