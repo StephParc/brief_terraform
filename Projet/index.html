@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Projet - Brief Terraform Azure</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" disabled>
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="..">Brief Terraform Azure</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Accueil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">Projet</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../A_vous_de_jouer/" class="nav-link">A vous de jouer</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href=".." class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../A_vous_de_jouer/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                              <button id="theme-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme" class="nav-link dropdown-toggle">
+                                <i class="fa-solid fa-circle-half-stroke fa-fw"></i>
+                                <span class="d-lg-none ms-2">Toggle theme</span>
+                              </button>
+                              <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                                    <i class="fa-solid fa-sun fa-fw"></i>
+                                    <span class="ms-2">Light</span>
+                                    <i class="fa-solid fa-check ms-auto d-none"></i>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                                    <i class="fa-solid fa-moon fa-fw"></i>
+                                    <span class="ms-2">Dark</span>
+                                    <i class="fa-solid fa-check ms-auto d-none"></i>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="true">
+                                    <i class="fa-solid fa-circle-half-stroke fa-fw"></i>
+                                    <span class="ms-2">Auto</span>
+                                    <i class="fa-solid fa-check ms-auto"></i>
+                                  </button>
+                                </li>
+                              </ul>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script src="../js/darkmode.js"></script>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#structure-du-projet" class="nav-link">Structure du projet:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#description" class="nav-link">Description:</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#les-modules" class="nav-link">Les modules</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#le-fichier-maintf-principal" class="nav-link">Le fichier main.tf principal</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#le-fichier-providertf" class="nav-link">Le fichier provider.tf</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#le-fichier-variablestf-principal" class="nav-link">Le fichier variables.tf principal</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#le-fichier-terraformtfvars" class="nav-link">Le fichier terraform.tfvars</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="structure-du-projet">Structure du projet:</h1>
+<div class="highlight"><pre><span></span><code>.  
+├── docs/  
+|    ├── A_vous_de_jouer.md  
+|    ├── index.md  
+|    └── Projet.md  
+├── VersionAvancee/  
+|    └── modules/  
+|        ├── nets/
+|            ├── main.tf  
+|            ├── outputs.tf  
+|            └── variables.tf     
+|        ├── resource_group/  
+|            ├── main.tf  
+|            ├── outputs.tf  
+|            └── variables.tf  
+|        ├── storage/  
+|            ├── main.tf  
+|            ├── outputs.tf  
+|            └── variables.tf  
+|        ├── vm/  
+|            ├── main.tf  
+|            ├── outputs.tf  
+|            └──variables.tf  
+|        └── web_app/  
+|            ├── main.tf  
+|            ├── outputs.tf  
+|            └── variables.tf  
+|    ├── main.tf  
+|    ├── provider.tf  
+|    ├── terraform.tfvars  
+|    └── variables.tf  
+.gitignore  
+mkdocs.yml  
+</code></pre></div>
+<hr />
+<h1 id="description">Description:</h1>
+<h2 id="les-modules">Les modules</h2>
+<p>Le projet est structuré avec des modules correspondant aux ressources à créer.<br />
+Chaque module comprend 3 fichiers .tf :</p>
+<ul>
+<li>
+<p><em>main.tf</em> le corps de code. C'est ici que les ressources sont définies. De la manière suivante:<br />
+<div class="highlight"><pre><span></span><code>resource &quot;type de ressource&quot; &quot;nom de la ressource&quot;{
+    propriété = &quot;paramètre&quot;
+    propriété = &quot;paramètre&quot;
+    ...  
+}
+</code></pre></div>
+On peut faire référence aux objets à l'intérieur du module ainsi: type_de_ressource.nom_de_la_ressource ou type_de_resource.nom_de_la_ressource.propriété.<br />
+<em>Exemple:</em><br />
+<div class="highlight"><pre><span></span><code>resource &quot;azurerm_resource_group&quot; &quot;rg&quot; {
+    name     = var.resource_group_name
+    location = var.location  
+}
+</code></pre></div>
+On pourra appeler azurerm_resource_group.rg.name ailleurs dans le module.<br />
+Pour faire y faire référence en dehors du module, il faut le déclarer en output.  </p>
+</li>
+<li>
+<p><em>outputs.tf</em>. Le fichier outputs permet de centraliser les outputs du module.  De la manière suivante:<br />
+<div class="highlight"><pre><span></span><code>output &quot;nom par lequel l&#39;objet sera appelé&quot;{
+    value = référence de l&#39;objet
+}
+</code></pre></div>
+<em>Exemple:</em><br />
+<div class="highlight"><pre><span></span><code>output &quot;resource_group_name&quot; {
+    value = azurerm_resource_group.rg
+}
+</code></pre></div></p>
+</li>
+<li>
+<p><em>variables.tf</em>. Le fichier variables.tf permet de centraliser les variables du module. De la manière suivante:<br />
+<div class="highlight"><pre><span></span><code>variable &quot;nom par lequel la variable sera appelée dans le module&quot; {
+    description = &quot;texte qui sera affiché pour renseigner la valeur&quot;
+    type        = le type de la variable
+    default     = &quot;la valeur par défaut&quot;
+}
+</code></pre></div>
+Si la valeur par défaut est renseignée, le prompt n'affiche pas la description.<br />
+La variable est appelée dans le module à l'aide de <em>var.&lt;nom de la variable&gt;</em><br />
+<em>Exemple:</em><br />
+<div class="highlight"><pre><span></span><code>variable &quot;resource_group_name&quot; {
+    description = &quot;Le nom du groupe de ressources&quot;
+    type        = string
+    default     = &quot;rg&quot;
+}
+</code></pre></div></p>
+</li>
+</ul>
+<h2 id="le-fichier-maintf-principal">Le fichier <em>main.tf</em> principal</h2>
+<p>C'est le corps du projet. Tous les modules sont appelés à cet endroit.<br />
+De la manière suivante:  <br />
+<div class="highlight"><pre><span></span><code>module &quot;nom du module&quot;{  
+    source      = &quot;chemin du module&quot;    
+    propriété= &quot;paramètre&quot;   
+    propriété= &quot;paramètre&quot;    
+    ...    
+}
+</code></pre></div>
+Toutes les propriétés de toutes les ressources du module doivent être reprises en utilisant les désignations des outputs.<br />
+Les variables du <em>main.tf</em> principal proviennent du <em>variables.tf</em> principal. Ce qui signifie qu'il faut redéclarer toutes les variables des modules appelés dans ce fichier.<br />
+Des désignations différentes auraient permis une meilleure compréhension d'un point de vue didactique mais j'ai préféré garder les désignations utilisées dans les modules.<br />
+Il est à noter qu'il est possible de créer de nouvelles ressources dans ce <em>main</em>.  </p>
+<h2 id="le-fichier-providertf">Le fichier <em>provider.tf</em></h2>
+<p>Plusieurs possibilités s'offrent à nous pour appeler le provider.</p>
+<ul>
+<li>Au niveau de la racine du projet, le provider sera le même pour l'ensemble du projet. </li>
+<li>A l'intérieur de chaque module, il sera ainsi possible d'avoir des providers différents selon les modules</li>
+</ul>
+<h2 id="le-fichier-variablestf-principal">Le fichier <em>variables.tf</em> principal</h2>
+<p>Ce fichier permet de centraliser toutes les variables appelées dans le <em>main.tf</em> principal.</p>
+<h2 id="le-fichier-terraformtfvars">Le fichier <em>terraform.tfvars</em></h2>
+<p>Ce fichier est ignoré par git. Il est donc intéressant d'y mettre toutes les valeurs des variables sensibles. Il permet également de les centraliser et d'avoir un seul endroit pour les modifier.Les noms sont les désignations du fichier <em>variables.tf</em> principal.<br />
+Le fichier <em>terraform_tfvars_fake</em> ne sert qu'à montrer à quoi ressemble le fichier <em>terraform.tfvars</em>.<br />
+Pour résumer:</p>
+<ul>
+<li>Si la variable est dans <em>terraform.tfvars</em>, c'est cette valeur qui est prise. Sinon, c'est la valeur par défaut de <em>variables.tf</em> principal.</li>
+<li>S'il n'y a pas de valeur par défaut dans <em>variables.tf</em> principal, c'est la valeur par défaut de <em>variables.tf</em> du module qui est prise.</li>
+<li>S'il n'y a pas de valeur par défaut dans <em>variables.tf</em> du module, le prompt affichera la description de la variable pour en saisir la valeur. </li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
